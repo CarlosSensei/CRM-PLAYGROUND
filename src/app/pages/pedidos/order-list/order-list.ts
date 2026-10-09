@@ -7,6 +7,7 @@ import { Order } from '../model/order';
 import { OrderService } from '../order-service/OrderService';
 import { OrderEditComponent } from '../order-edit/order-edit';
 import { SearchService } from '../../../core/services/search/search.service';
+import { CreateDialogService } from '../../../core/services/create-dialog/CreateDialogService';
 
 @Component({
   selector: 'app-order-list',
@@ -31,6 +32,7 @@ export class OrderListComponent implements OnInit {
     private router: Router,
     private orderService: OrderService,
     private searchService: SearchService,
+    private createDialogService: CreateDialogService,
     private cdr: ChangeDetectorRef
   ) {
       this.router.events.subscribe(() => {
@@ -44,22 +46,39 @@ export class OrderListComponent implements OnInit {
 
     this.loadOrders();
 
-    this.searchService.searchTerm$
-      .subscribe(term => {
+    this.searchService.searchTerm$.subscribe(term => {
 
-        this.globalSearch = term;
+      this.globalSearch = term;
 
-        this.applyFilters();
+      this.applyFilters();
+
+      this.cdr.detectChanges();
+
+    });
+
+    this.createDialogService.action$.subscribe(action => {
+
+      if (action === 'order') {
+        this.selectedOrder = {
+          id: 0,
+          orderNumber: '',
+          client: {} as any,
+          createdDate: new Date(),
+          status: 'Pending',
+          totalAmount: 0,
+          items: []
+        };
 
         this.cdr.detectChanges();
-
-      });
-  
+      }
+    });
+      
 
   }
 
   loadOrders(): void {
     this.orders = this.orderService.getOrders();
+    this.applyFilters();
   }
 
   editOrder(orderId: number): void {

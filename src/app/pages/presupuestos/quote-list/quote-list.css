@@ -1,13 +1,16 @@
 .quotes-container {
   width: 100%;
   padding: 2rem;
-  box-sizing: border-box;
+
 }
 
 .quotes-container h2 {
-  margin-bottom: 1.5rem;
-  color: #333;
-  font-size: 1.8rem;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.results-info {
+  margin: 10px 0px;
 }
 
 table {

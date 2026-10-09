@@ -59,6 +59,18 @@
   }
 }
 
+.client-number {
+  display: flex;
+  background: orange;
+  color: white;
+
+  padding: 0.75rem 1rem;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -104,4 +116,12 @@
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.btn-save:hover {
+  background: #1259a7;
+}
+
+.btn-cancel:hover {
+  background: #cfcfcf;
 }

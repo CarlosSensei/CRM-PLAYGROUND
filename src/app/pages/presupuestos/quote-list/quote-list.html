@@ -2,6 +2,10 @@
 
   <h2>Presupuestos</h2>
 
+  <div class="results-info">
+    <p>{{ filteredQuotes.length }} Presupuestos encontrados</p>
+  </div>
+
   <table>
 
     <thead>
@@ -56,10 +60,10 @@
 
   </table>
 
-</div>
+  <app-quote-edit
+    *ngIf="selectedQuote"
+    [quote]="selectedQuote"
+    (close)="closeEdit()">
+  </app-quote-edit>
 
-<app-quote-edit
-  *ngIf="selectedQuote"
-  [quote]="selectedQuote"
-  (close)="closeEdit()">
-</app-quote-edit>
+</div>

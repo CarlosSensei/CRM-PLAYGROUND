@@ -8,6 +8,17 @@
       placeholder="Buscar..."
       (input)="onSearch()">
 
+      <button
+        class="add-button"
+        [ngClass]="currentSection"
+        [title]="currentSection === 'clients'
+            ? 'Nuevo Cliente': currentSection === 'quotes'
+            ? 'Nuevo Presupuesto': currentSection === 'orders' 
+            ? 'Nuevo Pedido': 'error'"
+        (click)="onAdd()">
+        ✚
+      </button>
+
   </div>
 
 </header>

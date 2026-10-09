@@ -4,7 +4,13 @@
 
     <div class="modal-header">
 
-      <h2>Editar Cliente</h2>
+      <h2 *ngIf="client?.id && client.id > 0">
+        Editar cliente
+      </h2>
+
+      <h2 *ngIf="!client?.id || client.id === 0">
+        Nuevo cliente
+      </h2>
 
       <button
         class="close-btn"
@@ -13,6 +19,10 @@
       </button>
 
     </div>
+
+    <span class="client-number">
+      {{ client.id }}
+    </span>
 
     <div class="form-grid">
 

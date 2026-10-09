@@ -7,6 +7,7 @@ import { Client } from '../model/client.model';
 import { ClientService } from '../services/client.service';
 import { ClientEditComponent } from '../client-edit/client-edit';
 import { SearchService } from '../../../core/services/search/search.service';
+import { CreateDialogService } from '../../../core/services/create-dialog/CreateDialogService';
 import { CLIENTS_MOCK } from '../model/client.mock';
 
 @Component({
@@ -30,6 +31,7 @@ export class ClientListComponent implements OnInit {
     private router: Router,
     private clientService: ClientService,
     private searchService: SearchService,
+    private createDialogService: CreateDialogService,
     private cdr: ChangeDetectorRef
   ) {
       this.router.events.subscribe(() => {
@@ -61,6 +63,25 @@ export class ClientListComponent implements OnInit {
         this.cdr.detectChanges();
 
       });
+    
+      this.createDialogService.action$.subscribe(action => {
+
+        this.editingClient = {
+          id: 0,
+          name: '',
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          city: '',
+          dni: '',
+          status: 'active',
+          birthDate: '',
+          createdAt: new Date()
+        };
+
+        this.cdr.detectChanges();
+      });
 
   }
 
@@ -75,6 +96,8 @@ export class ClientListComponent implements OnInit {
       this.filteredClients = [...clients];
       this.updatePagination();
     });
+
+    this.applyFilters();
 
   }
 

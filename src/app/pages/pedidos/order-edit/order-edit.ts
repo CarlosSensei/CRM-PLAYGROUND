@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 
 import { Order } from '../model/order';
 import { OrderService } from '../order-service/OrderService';
+import { ClientService } from '../../clientes/services/client.service';
+import { Client } from '../../clientes/model/client.model';
 
 @Component({
   selector: 'app-order-edit',
@@ -23,13 +25,41 @@ import { OrderService } from '../order-service/OrderService';
 })
 export class OrderEditComponent {
 
+  clients: Client[] = [];
+
   @Input() order!: Order;
 
   @Output() close = new EventEmitter<void>();
 
   constructor(
-    private orderService: OrderService
+    private orderService: OrderService,
+    private clientService: ClientService
   ) {}
+
+  ngOnInit(): void {
+
+    this.clientService.getClients()
+      .subscribe(clients => {
+        this.clients = clients;
+      });
+
+  }
+
+  addItem(): void {
+
+    if (!this.order.items) {
+      this.order.items = [];
+    }
+
+    this.order.items.push({
+      id: 0,
+      description: '',
+      quantity: 1,
+      unitPrice: 0,
+      totalPrice: 0
+    });
+
+  }
 
   save(): void {
     this.orderService.updateOrder(this.order);
@@ -39,4 +69,5 @@ export class OrderEditComponent {
   cancel(): void {
     this.close.emit();
   }
+  
 }

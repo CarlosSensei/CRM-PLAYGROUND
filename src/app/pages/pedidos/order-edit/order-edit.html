@@ -2,10 +2,27 @@
 
   <div class="modal">
 
-    <h2>Editar Pedido</h2>
+    <div class="modal-header">
 
-    <div class="order-number">
-      {{ order.orderNumber }}
+      <h2 *ngIf="order?.id && order.id > 0">Editar pedido</h2>
+      <h2 *ngIf="!order?.id || order.id === 0">Nuevo pedido</h2>
+
+      <button class="close-btn" (click)="cancel()">✖</button>
+
+    </div>
+
+    <span class="order-number">{{ order.orderNumber }}</span>
+
+    <div class="form-group">      
+      <label>Cliente</label>
+
+      <select [(ngModel)]="order.client.id">
+
+        <option *ngFor="let client of clients" [ngValue]="client.id">
+          {{ client.name }} {{ client.firstName }} {{ client.lastName }}
+        </option>
+
+      </select>
     </div>
 
     <div class="form-group">
@@ -23,25 +40,69 @@
     </div>
 
     <div class="form-group">
+      <label>Líneas del pedido</label>
+
+      <table class="items-table">
+
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio Unit.</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of order.items">
+
+            <td>
+              <input
+                type="text"
+                [(ngModel)]="item.description">
+            </td>
+
+            <td>
+              <input
+                type="number"
+                [(ngModel)]="item.quantity">
+            </td>
+
+            <td>
+              <input
+                type="number"
+                [(ngModel)]="item.unitPrice">
+            </td>
+
+            <td>
+              {{ item.quantity * item.unitPrice | number:'1.2-2' }} €
+            </td>
+
+          </tr>
+        </tbody>
+
+      </table>
+
+      <button type="button" class="btn-add-item" (click)="addItem()">+ Añadir línea</button>
+
+    </div>
+
+    <div class="form-group">
       <label>Total</label>
 
-      <input
-        type="number"
-        [(ngModel)]="order.totalAmount">
+      <input type="number" [(ngModel)]="order.totalAmount">
     </div>
 
-    <div class="total">
-      Total Pedido: {{ order.totalAmount }} €
-    </div>
+    <div class="total">Total Pedido: {{ order.totalAmount }} €</div>
 
     <div class="actions">
 
-      <button (click)="save()">
-        Guardar
+      <button class="btn-cancel" (click)="cancel()">
+        Cancelar
       </button>
 
-      <button (click)="cancel()">
-        Cancelar
+      <button class="btn-save" (click)="save()">
+        Guardar
       </button>
 
     </div>

@@ -2,10 +2,17 @@
 
   <div class="modal">
 
-    <h2>Editar presupuesto</h2>
+    <div class="modal-header">
+
+      <h2 *ngIf="quote?.id && quote.id > 0">Editar presupuesto</h2>
+      <h2 *ngIf="!quote?.id || quote.id === 0">Nuevo presupuesto</h2>
+
+      <button class="close-btn" (click)="cancel()">✖</button>
+    </div>
+
+    <span class="quote-number">{{ quote.id }}</span>
 
     <div class="form-group">
-
       <label>Estado</label>
 
       <select [(ngModel)]="quote.status">
@@ -21,28 +28,22 @@
     </div>
 
     <div class="form-group">
-
       <label>Notas</label>
 
-      <textarea
-        rows="4"
-        [(ngModel)]="quote.notes">
-      </textarea>
+      <textarea rows="4" [(ngModel)]="quote.notes"></textarea>
 
     </div>
 
-    <div class="total">
-      Total: {{ quote.totalAmount }} €
-    </div>
+    <div class="total">Total: {{ quote.totalAmount }} €</div>
 
     <div class="actions">
 
-      <button (click)="save()">
-        Guardar
+      <button class="btn-cancel" (click)="cancel()">
+        Cancelar
       </button>
 
-      <button (click)="cancel()">
-        Cancelar
+      <button class="btn-save" (click)="save()">
+        Guardar
       </button>
 
     </div>

@@ -4,23 +4,13 @@
 }
 
 .orders-container h2 {
-  margin-bottom: 1.5rem;
-  color: #2e7d32;
+  font-size: larger;
+  font-weight: bold;
 }
 
-.orders-container input {
-  width: 350px;
-  padding: 0.75rem 1rem;
+.results-info {
+  margin: 10px 0px;
 
-  border: 1px solid #ddd;
-  border-radius: 8px;
-
-  margin-bottom: 1.5rem;
-}
-
-.orders-container input:focus {
-  outline: none;
-  border-color: #2e7d32;
 }
 
 table {

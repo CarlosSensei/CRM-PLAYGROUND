@@ -26,9 +26,43 @@
   gap: 1rem;
 }
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  
+
+  margin-bottom: 24px;
+
+  .close-btn {
+    background: transparent;
+    border: none;
+
+    font-size: 20px;
+
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #d32f2f;
+  }
+}
+
 .modal h2 {
   margin: 0;
   color: #333;
+  font-size: large;
+  font-weight: bold;
+}
+
+.quote-number {
+  background: #1976d2;
+  color: #fff;
+
+  padding: 0.75rem 1rem;
+
+  border-radius: 8px;
+
+  font-weight: 600;
 }
 
 .form-group {
@@ -89,20 +123,20 @@
   transition: all 0.3s ease;
 }
 
-.actions button:first-child {
+.btn-save {
   background: #1976d2;
   color: white;
 }
 
-.actions button:first-child:hover {
+.btn-save:hover {
   background: #1259a7;
 }
 
-.actions button:last-child {
+.btn-cancel {
   background: #e0e0e0;
   color: #333;
 }
 
-.actions button:last-child:hover {
+.btn-cancel:hover {
   background: #cfcfcf;
 }
