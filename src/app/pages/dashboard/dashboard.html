@@ -1,0 +1,112 @@
+<div class="dashboard">
+
+  <h1>Dashboard Comercial</h1>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <h3>Presupuestos</h3>
+      <span>{{ metrics.totalQuotes }}</span>
+    </div>
+
+    <div class="card">
+      <h3>Pedidos</h3>
+      <span>{{ metrics.totalOrders }}</span>
+    </div>
+
+    <div class="card success">
+      <h3>% Transformación</h3>
+      <span>{{ metrics.conversionRate }}%</span>
+    </div>
+
+    <div class="card revenue">
+      <h3>Total Facturado</h3>
+      <span>{{ metrics.totalRevenue }} €</span>
+    </div>
+
+    <div class="card">
+      <h3>Días Promedio Aceptación</h3>
+      <span>{{ metrics.averageAcceptanceDays }}</span>
+    </div>
+
+    <div class="card warning">
+      <h3>% Anulaciones</h3>
+      <span>{{ metrics.cancellationRate }}%</span>
+    </div>
+
+  </div>
+  <div class="charts-grid">
+
+    <div class="chart-card">
+
+      <h3>Presupuestos por mes</h3>
+
+      <div
+        class="bar"
+        *ngFor="let item of metrics.quotesByMonth">
+
+        <span>{{ item.month }}</span>
+
+        <div class="bar-track">
+          <div
+            class="bar-fill quotes"
+            [style.width.%]="item.value * 4">
+          </div>
+        </div>
+
+        <span>{{ item.value }}</span>
+
+      </div>
+
+    </div>
+
+    <div class="chart-card">
+
+      <h3>Pedidos por mes</h3>
+
+      <div
+        class="bar"
+        *ngFor="let item of metrics.ordersByMonth">
+
+        <span>{{ item.month }}</span>
+
+        <div class="bar-track">
+          <div
+            class="bar-fill orders"
+            [style.width.%]="item.value * 6">
+          </div>
+        </div>
+
+        <span>{{ item.value }}</span>
+
+      </div>
+
+    </div>
+
+    <div class="chart-card full-width">
+
+      <h3>Facturación mensual</h3>
+
+      <div
+        class="bar"
+        *ngFor="let item of metrics.revenueByMonth">
+
+        <span>{{ item.month }}</span>
+
+        <div class="bar-track">
+          <div
+            class="bar-fill revenue"
+            [style.width.%]="item.value / 80">
+          </div>
+        </div>
+
+        <span>{{ item.value }}€</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

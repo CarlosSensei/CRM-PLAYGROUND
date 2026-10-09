@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+width: 70px;
+transition: width .3s ease;
+}
+
+.sidebar:hover {
+width: 250px;
+}
+
+.content {
+  flex-grow: 1;
+  
+  margin-top: 80px;
+  padding: 30px;
+
+  transition: all .3s ease;
+}

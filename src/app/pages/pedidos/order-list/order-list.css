@@ -1,0 +1,116 @@
+.orders-container {
+  padding: 2rem;
+  width: 100%;
+}
+
+.orders-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2e7d32;
+}
+
+.orders-container input {
+  width: 350px;
+  padding: 0.75rem 1rem;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  margin-bottom: 1.5rem;
+}
+
+.orders-container input:focus {
+  outline: none;
+  border-color: #2e7d32;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  background: white;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+thead {
+  background: #2e7d32;
+  color: white;
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+}
+
+tbody td {
+  padding: 1rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f5fff5;
+}
+
+td:last-child {
+  display: flex;
+  gap: .5rem;
+}
+
+button {
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:first-child {
+  background: #2e7d32;
+  color: white;
+}
+
+button:first-child:hover {
+  background: #1b5e20;
+}
+
+button:last-child {
+  background: #d32f2f;
+  color: white;
+}
+
+button:last-child:hover {
+  background: #b71c1c;
+}
+
+.status {
+  padding: .35rem .75rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.Pending {
+  background: #f57c00;
+}
+
+.InProduction {
+  background: #1976d2;
+}
+
+.Ready {
+  background: #7b1fa2;
+}
+
+.Delivered {
+  background: #2e7d32;
+}
+
+.Cancelled {
+  background: #d32f2f;
+}

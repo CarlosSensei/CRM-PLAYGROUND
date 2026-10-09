@@ -1,0 +1,130 @@
+.dashboard {
+  padding: 2rem;
+}
+
+.dashboard h1 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.cards-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.card {
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 1.5rem;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+
+  transition: transform .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.card span {
+
+  display: block;
+
+  margin-top: 1rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  color: #1976d2;
+}
+
+.card.success span {
+  color: #2e7d32;
+}
+
+.card.revenue span {
+  color: #f57c00;
+}
+
+.card.warning span {
+  color: #d32f2f;
+}
+
+.charts-grid {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.chart-card {
+
+  background: white;
+  border-radius: 16px;
+
+  padding: 1.5rem;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.chart-card h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 40px 1fr 60px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: .8rem;
+}
+
+.bar-track {
+  height: 14px;
+
+  background: #eceff1;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.bar-fill.quotes {
+  background: #1976d2;
+}
+
+.bar-fill.orders {
+  background: #2e7d32;
+}
+
+.bar-fill.revenue {
+  background: #ff9800;
+}

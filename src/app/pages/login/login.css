@@ -1,0 +1,52 @@
+.login-page {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #1f2937
+  );
+}
+
+.login-card {
+  width: 350px;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+}
+
+button {
+  padding: 12px;
+
+  background: #2563eb;
+  color: white;
+
+  border: none;
+
+  cursor: pointer;
+}

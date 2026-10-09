@@ -1,0 +1,52 @@
+<div class="modal-backdrop">
+
+  <div class="modal">
+
+    <h2>Editar presupuesto</h2>
+
+    <div class="form-group">
+
+      <label>Estado</label>
+
+      <select [(ngModel)]="quote.status">
+
+        <option value="Draft">Draft</option>
+        <option value="Sent">Sent</option>
+        <option value="Accepted">Accepted</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Expired">Expired</option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Notas</label>
+
+      <textarea
+        rows="4"
+        [(ngModel)]="quote.notes">
+      </textarea>
+
+    </div>
+
+    <div class="total">
+      Total: {{ quote.totalAmount }} €
+    </div>
+
+    <div class="actions">
+
+      <button (click)="save()">
+        Guardar
+      </button>
+
+      <button (click)="cancel()">
+        Cancelar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

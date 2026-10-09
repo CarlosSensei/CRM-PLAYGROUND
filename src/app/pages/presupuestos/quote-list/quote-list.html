@@ -1,0 +1,65 @@
+<div class="quotes-container">
+
+  <h2>Presupuestos</h2>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let quote of filteredQuotes">
+
+        <td>{{ quote.id }}</td>
+
+        <td>
+          {{ quote.client.firstName }}
+          {{ quote.client.lastName }}
+        </td>
+
+        <td>
+          {{ quote.createdDate | date:'dd/MM/yyyy' }}
+        </td>
+
+        <td>
+          <span class="status" [ngClass]="quote.status">
+            {{ quote.status }}
+          </span>
+        </td>
+
+        <td>{{ quote.totalAmount }} €</td>
+
+        <td>
+
+          <button (click)="editQuote(quote.id)">
+            Editar
+          </button>
+
+          <button (click)="deleteQuote(quote.id)">
+            Eliminar
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+<app-quote-edit
+  *ngIf="selectedQuote"
+  [quote]="selectedQuote"
+  (close)="closeEdit()">
+</app-quote-edit>

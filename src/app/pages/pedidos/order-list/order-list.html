@@ -1,0 +1,71 @@
+<div class="orders-container">
+
+  <h2>Pedidos</h2>
+
+  <div class="results-info">
+    {{ filteredOrders.length }} pedidos encontrados
+  </div>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Nº Pedido</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let order of filteredOrders">
+
+        <td>{{ order.orderNumber }}</td>
+
+        <td>
+          {{ order.client.firstName }}
+          {{ order.client.lastName }}
+        </td>
+
+        <td>
+          {{ order.createdDate | date:'dd/MM/yyyy' }}
+        </td>
+
+        <td>
+          <span
+            class="status"
+            [ngClass]="order.status">
+            {{ order.status }}
+          </span>
+        </td>
+
+        <td>{{ order.totalAmount }} €</td>
+
+        <td>
+
+          <button (click)="editOrder(order.id)">
+            Editar
+          </button>
+
+          <button (click)="deleteOrder(order.id)">
+            Eliminar
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+<app-order-edit
+  *ngIf="selectedOrder"
+  [order]="selectedOrder"
+  (close)="closeEdit()">
+</app-order-edit>
