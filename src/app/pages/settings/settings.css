@@ -1,0 +1,283 @@
+.settings-container {
+  padding: var(--section-padding);
+  width: 100%;
+}
+
+.settings-container h1 {
+  margin-bottom: 0.5rem;
+  font-size: var(--text-size);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.settings-subtitle {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.settings-card {
+  background: var(--delivered);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+  transition: var(--transition);
+}
+
+.settings-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.settings-card h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-size: larger;
+  font-weight: bold;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  background: var(--background);
+  border: 1px solid #ddd;
+  border-radius: var(--btn-radius);
+  box-sizing: content-box;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--quotes);
+  box-shadow: var(--modal-box-shadow);
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+.setting-row strong {
+  color: var(--text-forte);
+}
+
+.setting-row p {
+  margin-top: 4px;
+  color: var(--text-contrast);
+  font-size: 0.9rem;
+}
+
+.actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.secondary-btn,
+.export-btn,
+.danger-btn,
+.save-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.secondary-btn {
+  background: var(--btn-cancel);
+  border: none;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: var(--btn-cancel-hover);
+}
+
+.export-btn {
+  background: var(--orders);
+  color: var(--text-contrast);
+  border: none;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+}
+
+.export-btn:hover {
+  background: var(--orders-hover);
+}
+
+.danger-btn {
+  background: var(--danger);
+  color: var(--text-contrast);
+  border: none;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+}
+
+.danger-btn:hover {
+  background: var(--btn-delete-hover);
+}
+
+.save-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.save-btn {
+  background: linear-gradient(
+    135deg,
+    #0051ff,
+    #6f00ff
+  );
+  color: var(--text-contrast);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  box-shadow: var(--modal-box-shadow);
+}
+
+.save-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+}
+
+/* Toggle Style */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 50px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.switch input:checked + .slider {
+  background: var(--orders);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* Dark mode support */
+
+.dark-theme .settings-container h1,
+.dark-theme .settings-card h2,
+.dark-theme .form-group label,
+.dark-theme .setting-row strong {
+  color: #f8fafc;
+}
+
+.dark-theme .settings-subtitle,
+.dark-theme .setting-row p {
+  color: #cbd5e1;
+}
+
+.dark-theme .settings-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group select {
+  background: #334155;
+  color: white;
+  border: 1px solid #475569;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1rem;
+  }
+
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .save-section {
+    justify-content: stretch;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
+
+  .actions-group {
+    flex-direction: column;
+  }
+
+  .actions-group button {
+    width: 100%;
+  }
+}
+
+.settings-card {
+  animation: fadeUp .5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,175 @@
+<div class="settings-container">
+
+  <h1>Settings</h1>
+  <p class="settings-subtitle">
+    Manage your CRM preferences and application configuration.
+  </p>
+
+  <!-- Profile -->
+  <section class="settings-card">
+    <h2>Profile</h2>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input
+        type="text"
+        [(ngModel)]="settings.username">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="email"
+        [(ngModel)]="settings.email">
+    </div>
+
+    <div class="form-group">
+      <label>Rol</label>
+      <input
+        type="text"
+        [(ngModel)]="settings.role">
+    </div>
+  </section>
+
+  <!-- Appearance -->
+  <section class="settings-card">
+    <h2>Appearance</h2>
+
+    <div class="setting-row">
+      <div>
+        <strong>Dark Mode</strong>
+        <p>Enable dark theme across the application</p>
+      </div>
+
+      <label class="switch">
+        <input
+          type="checkbox"
+          [(ngModel)]="settings.darkMode"
+          (change)="applyTheme()">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </section>
+
+  <!-- Business -->
+  <section class="settings-card">
+    <h2>Business Settings</h2>
+
+    <div class="form-group">
+      <label>Currency</label>
+
+      <select [(ngModel)]="settings.currency">
+        <option value="EUR">Euro (€)</option>
+        <option value="USD">US Dollar ($)</option>
+        <option value="GBP">British Pound (£)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>VAT Percentage (%)</label>
+
+      <input
+        type="number"
+        min="0"
+        max="100"
+        [(ngModel)]="settings.vatPercentage">
+    </div>
+  </section>
+
+  <!-- Notifications -->
+  <section class="settings-card">
+    <h2>Notifications</h2>
+
+    <div class="setting-row">
+      <div>
+        <strong>Email Notifications</strong>
+        <p>Receive updates by email</p>
+      </div>
+
+      <input
+        type="checkbox"
+        [(ngModel)]="settings.emailNotifications">
+    </div>
+
+    <div class="setting-row">
+      <div>
+        <strong>Desktop Notifications</strong>
+        <p>Show browser notifications</p>
+      </div>
+
+      <input
+        type="checkbox"
+        [(ngModel)]="settings.desktopNotifications">
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section class="settings-card">
+    <h2>Dashboard Widgets</h2>
+
+    <div class="setting-row">
+      <span>Revenue Widget</span>
+      <input
+        type="checkbox"
+        [(ngModel)]="settings.showRevenueWidget">
+    </div>
+
+    <div class="setting-row">
+      <span>Orders Widget</span>
+      <input
+        type="checkbox"
+        [(ngModel)]="settings.showOrdersWidget">
+    </div>
+
+    <div class="setting-row">
+      <span>Clients Widget</span>
+      <input
+        type="checkbox"
+        [(ngModel)]="settings.showClientsWidget">
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section class="settings-card">
+    <h2>Security</h2>
+
+    <div class="actions-group">
+      <button class="secondary-btn">
+        Change Password
+      </button>
+
+      <button class="secondary-btn">
+        Enable 2FA
+      </button>
+    </div>
+  </section>
+
+  <!-- Data Management -->
+  <section class="settings-card">
+    <h2>Data Management</h2>
+
+    <div class="actions-group">
+      <button
+        class="export-btn"
+        (click)="exportSettings()">
+        Export Settings
+      </button>
+
+      <button
+        class="danger-btn"
+        (click)="resetSettings()">
+        Reset Settings
+      </button>
+    </div>
+  </section>
+
+  <!-- Save -->
+  <div class="save-section">
+    <button
+      class="save-btn"
+      (click)="saveSettings()">
+      Save Changes
+    </button>
+  </div>
+
+</div>

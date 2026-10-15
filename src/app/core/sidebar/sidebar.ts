@@ -20,7 +20,14 @@ interface MenuItem {
 })
 export class SidebarComponent {
 
-  userName = 'Carlos';
+  get username(): string {
+
+    const settings = localStorage.getItem('settings');
+
+    return settings
+      ? JSON.parse(settings).username
+      : 'Carlos';
+  } 
 
   menuItems: MenuItem[] = [
     {

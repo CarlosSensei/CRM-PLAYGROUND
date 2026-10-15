@@ -7,7 +7,7 @@
       <h2 *ngIf="quote?.id && quote.id > 0">Editar presupuesto</h2>
       <h2 *ngIf="!quote?.id || quote.id === 0">Nuevo presupuesto</h2>
 
-      <button class="close-btn" (click)="cancel()">✖</button>
+      <button class="close-btn" (click)="cancel()">x</button>
     </div>
 
     <span class="quote-number">{{ quote.id }}</span>

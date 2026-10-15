@@ -1,33 +1,33 @@
 .orders-container {
-  padding: 2rem;
+  padding: var(--section-padding);
   width: 100%;
 }
 
-.orders-container h2 {
+.orders-container h1 {
+  color: var(--text-primary);
   font-size: larger;
   font-weight: bold;
 }
 
 .results-info {
   margin: 10px 0px;
-
+  color: var(--text-primary);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-
-  background: white;
-  border-radius: 12px;
-
+  background: var(--background);
+  border-radius: var(--modal-radius);
   overflow: hidden;
-
   box-shadow: 0 4px 15px rgba(0,0,0,.08);
 }
 
 thead {
-  background: #2e7d32;
-  color: white;
+  background: var(--orders);
+  color: var(--text-contrast);
+  padding: var(--table-head-padding);
+  text-align: left;
 }
 
 thead th {
@@ -36,7 +36,8 @@ thead th {
 }
 
 tbody td {
-  padding: 1rem;
+  padding: var(--table-padding);
+  border-bottom: 1px solid #eee;
 }
 
 tbody tr {
@@ -44,7 +45,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background: #f5fff5;
+  background: var(--background-hover);
 }
 
 td:last-child {
@@ -55,54 +56,55 @@ td:last-child {
 button {
   border: none;
   padding: .5rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--btn-radius);
   cursor: pointer;
 }
 
-button:first-child {
-  background: #2e7d32;
-  color: white;
+.btn-delete {
+  background: var(--btn-delete);
+  color: var(--text-contrast);
+  
 }
 
-button:first-child:hover {
-  background: #1b5e20;
+.btn-delete:hover {
+  background: var(--btn-delete-hover);
 }
 
-button:last-child {
-  background: #d32f2f;
-  color: white;
+.btn-edit {
+  background: var(--orders);
+  color: var(--text-contrast);
 }
 
-button:last-child:hover {
-  background: #b71c1c;
+.btn-edit:hover {
+  background: var(--orders-hover);
 }
 
 .status {
   padding: .35rem .75rem;
   border-radius: 20px;
-  color: white;
+  color: var(--text-contrast);
   font-size: 12px;
   font-weight: 600;
 }
 
 .Pending {
-  background: #f57c00;
+  background: var(--pending);
 }
 
 .InProduction {
-  background: #1976d2;
+  background: var(--inproduction);
 }
 
 .Ready {
-  background: #7b1fa2;
+  background: var(--ready);
 }
 
 .Delivered {
-  background: #2e7d32;
+  background: var(--delivered);
 }
 
 .Cancelled {
-  background: #d32f2f;
+  background: var(--cancelled);
 }
 
 .modal-backdrop {
@@ -111,27 +113,21 @@ button:last-child:hover {
   left: 0;
   width: 100%;
   height: 100%;
-
-  background: rgba(0, 0, 0, 0.5);
-
+  background: var(--modal-backdrop-bg);
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 1000;
 }
 
 .modal {
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
-
+  background: var(--background-hover);
+  padding: var(--modal-padding);
+  border-radius: var(--modal-radius);
   min-width: 350px;
   max-width: 500px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
-  animation: modalFadeIn 0.25s ease;
+  box-shadow: var(--modal-box-shadow);
+  animation: var(--transition);
 }
 
 .modal h3 {
@@ -150,25 +146,29 @@ button:last-child:hover {
 }
 
 .btn-cancel {
-  background: #e5e7eb;
-  color: #111827;
+  background: var(--btn-cancel);
+  color: var(--text-primary);
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
   cursor: pointer;
 }
 
+.btn-cancel:hover {
+  background: var(--btn-cancel-hover);
+}
+
 .btn-confirm-delete {
-  background: #ef4444;
-  color: white;
+  background: var(--danger);
+  color: var(--text-contrast);
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
   cursor: pointer;
 }
 
 .btn-confirm-delete:hover {
-  background: #dc2626;
+  background: var(--btn-delete-hover);
 }
 
 @keyframes modalFadeIn {

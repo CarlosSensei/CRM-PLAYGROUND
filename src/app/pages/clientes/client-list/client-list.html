@@ -15,9 +15,7 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Segundo Apellido</th>
+          <th>Cliente</th>
           <th>Teléfono</th>
           <th>Email</th>
           <th>Ciudad</th>
@@ -31,9 +29,9 @@
         <tr *ngFor="let client of paginatedClients">
 
           <td>{{ client.id }}</td>
-          <td>{{ client.name }}</td>
-          <td>{{ client.firstName }}</td>
-          <td>{{ client.lastName }}</td>
+          <td>{{ client.name }}
+              {{ client.firstName }}
+              {{ client.lastName }}</td>
           <td>{{ client.phone }}</td>
           <td>{{ client.email }}</td>
           <td>{{ client.city }}</td>

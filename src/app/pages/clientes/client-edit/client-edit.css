@@ -1,28 +1,20 @@
 .modal-backdrop {
   position: fixed;
   inset: 0;
-
-  background: rgba(0, 0, 0, 0.5);
-
+  background: var(--modal-backdrop-bg);
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 9999;
 }
 
 .modal-content {
   width: 800px;
   max-width: 90vw;
-
-  background: white;
-
-  border-radius: 12px;
-
-  padding: 24px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
-
+  background: var(--background);
+  border-radius: var(--modal-radius);
+  padding: var(--modal-padding);
+  box-shadow: var(--modal-box-shadow);
   animation: modalOpen .2s ease;
 }
 
@@ -30,21 +22,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: var(--margin-bottom);
+}
 
-  margin-bottom: 24px;
+.modal-header h2 {
+  font-size: var(--text-size-larger);
+  font-weight: var(--text-bold);
 }
 
 .close-btn {
   background: transparent;
   border: none;
-
-  font-size: 20px;
-
+  font-size: var(--text-medium);
+  font-weight: var(--text-bold);
   cursor: pointer;
 }
 
 .close-btn:hover {
-  color: #d32f2f;
+  color: var(--danger);
 }
 
 @keyframes modalOpen {
@@ -61,13 +56,11 @@
 
 .client-number {
   display: flex;
-  background: orange;
-  color: white;
-
-  padding: 0.75rem 1rem;
-
+  background: var(--clients);
+  color: var(--text-contrast);
+  padding: 8px 12px;
+  margin-bottom: var(--margin-bottom);
   border-radius: 8px;
-
   font-weight: 600;
 }
 
@@ -91,7 +84,7 @@
 .form-group select {
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: var(--btn-radius);
 }
 
 .actions {
@@ -102,26 +95,26 @@
 }
 
 .btn-save {
-  background: #1976d2;
-  color: white;
+  background: var(--clients);
+  color: var(--text-contrast);
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
   cursor: pointer;
 }
 
 .btn-cancel {
-  background: #e0e0e0;
+  background: var(--btn-cancel);
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
   cursor: pointer;
 }
 
 .btn-save:hover {
-  background: #1259a7;
+  background: var(--clients-hover);
 }
 
 .btn-cancel:hover {
-  background: #cfcfcf;
+  background: var(--btn-cancel-hover);
 }

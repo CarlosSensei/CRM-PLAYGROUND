@@ -1,3 +1,146 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+
+:root {
+
+    /* Background Colors */
+    --background: white;
+    --background-hover: #f8f9fa;
+    --sidebar-bg: #111827;
+    --sidebar-bg-hover: #1f2937;
+    --modal-bg: white;
+    --modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+    --card-bg: white;
+    --table-bg: white;
+    --input-bg: white;
+    --clients: orange;
+    --clients-hover: #ffb74d;
+    --quotes: #1976d2;
+    --quotes-hover: #1565c0;
+    --orders: #2e7d32;
+    --orders-hover: #1b5e20;
+    --default: #c0c0c0;
+    
+    --pending: #EAB308;
+    --inproduction: #6366F1;
+    --ready: #7b1fa2;
+    --delivered: #84CC16;
+    --cancelled: #e71414;
+    --draft: #757575;
+    --sent: #14B8A6;
+    --accepted: #8B5CF6;
+    --rejected: #d32f2f;
+    --expired: #475569;
+
+    /* Medidas estandard */
+    --margin-bottom: 2rem;
+    --section-padding: 2rem;
+
+    /* Text Colors and Sizes */
+    --text-primary: #333;
+    --text-secondary: #7c818a;
+    --text-forte: #000;
+    --text-contrast: white;
+    --text-bold: bold;
+    --text-size-larger: larger;
+    --text-size: 2rem;
+    --text-medium: 1.3rem;
+
+    --warning: orange;
+    --danger: red;
+    --info: #1976d2;
+
+    /* Buttons */
+    --btn-delete: #ef4444;
+    --btn-delete-hover: #dc2626;
+    --btn-cancel: #e5e7eb;
+    --btn-cancel-hover: #acacac;
+    --btn-radius: 8px;
+    --btn-padding: 10px 16px;
+
+    /* Modals*/
+    --modal-radius: 12px;    
+    --modal-padding: 2rem;
+    --modal-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    /* Tables */
+    --font-header: 600;
+    --table-head-padding: 1rem;
+    --table-padding: 0.5rem;
+    --tr-hover: #f5f9ff;
+
+    /* Inputs */
+    --border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    /* Animations */
+    --transition: all .3s ease;
+}
+
+
+/* DARK MODE */
+
+body.dark-theme table {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark-theme tbody td {
+  color: #f8fafc;
+}
+
+body.dark-theme tbody tr {
+  border-bottom: 1px solid #334155;
+}
+
+body.dark-theme tbody tr:hover {
+  background: #334155;
+}
+
+body.dark-theme .results-info {
+  color: #cbd5e1;
+}
+
+body.dark-theme .modal {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark-theme .btn-cancel {
+  background: #334155;
+  color: #f8fafc;
+}
+
+body.dark-theme thead {
+  background: #166534;
+}
+
+/* Dark mode support */
+
+.dark-theme .settings-container h1,
+.dark-theme .settings-card h2,
+.dark-theme .form-group label,
+.dark-theme .setting-row strong {
+  color: #f8fafc;
+}
+
+.dark-theme .settings-subtitle,
+.dark-theme .setting-row p {
+  color: #cbd5e1;
+}
+
+.dark-theme .settings-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group select {
+  background: #334155;
+  color: white;
+  border: 1px solid #475569;
+}
+

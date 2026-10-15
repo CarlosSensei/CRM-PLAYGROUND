@@ -4,6 +4,7 @@ import { LayoutComponent } from './core/layout/layout';
 import { HomeComponent } from './pages/home/home';
 import { ClientListComponent } from './pages/clientes/client-list/client-list';
 import { DashboardComponent } from './pages/dashboard/dashboard';
+import { SettingsComponent } from './pages/settings/settings';
 
 
 export const routes: Routes = [
@@ -46,6 +47,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
       }
  
 

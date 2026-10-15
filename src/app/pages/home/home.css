@@ -1,51 +1,38 @@
 .hero {
   display: flex;
-
   width: 100%;
   min-height: calc(100vh - 80px);
-
   padding: 40px;
-
   box-sizing: border-box;
 }
 
 .hero-content {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   text-align: center;
 }
 
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
-
   margin-bottom: 20px;
-
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 .hero-content p {
   max-width: 500px;
-
   font-size: 1.2rem;
   line-height: 1.6;
-
   margin-bottom: 30px;
-
-  color: #6b7280;
+  color: var(--text-secondary);
 }
 
 .hero-image {
   flex: 1;
-
   display: flex;
-
   justify-content: center;
   align-items: center;
 }
@@ -53,29 +40,25 @@
 .hero-image img {
   width: 80%;
   max-width: 600px;
-
   height: auto;
-
   object-fit: contain;
-
   border-radius: 20px;
 }
 
 .cta-button {
   display: inline-block;
-
   padding: 12px 24px;
-
   font-size: 1rem;
   font-weight: 600;
-
-  color: #ffffff;
-  background-color: #3b82f6;
-
+  color: var(--text-contrast);
+  background-color: var(--quotes);
   border: none;
-  border-radius: 8px;
-
+  border-radius: var(--btn-radius);
   cursor: pointer;
+  transition: var(--transition);
+}
 
-  transition: background-color 0.3s ease;
+.cta-button:hover {
+  background-color: var(--quotes-hover);
+  transform: scale(1.1);
 }
