@@ -27,6 +27,9 @@ export class ClientListComponent implements OnInit {
   currentPage = 1;
   pageSize = 10;
 
+  showDeleteModal = false;
+  clientToDelete: Client | null = null;
+
   constructor(
     private router: Router,
     private clientService: ClientService,
@@ -194,6 +197,26 @@ export class ClientListComponent implements OnInit {
 
   }
 
+  openDeleteModal(client: Client): void {
+    this.clientToDelete = client;
+    this.showDeleteModal = true;
+  }
+
+  confirmDelete(): void {
+    if (!this.clientToDelete) {
+      return;
+    }
+
+    this.deleteClient(this.clientToDelete);
+
+    this.showDeleteModal = false;
+    this.clientToDelete = null;
+  }
+
+  closeDeleteModal(): void {
+    this.showDeleteModal = false;
+    this.clientToDelete = null;
+  }
 
   closeClient(): void {
     this.editingClient = undefined;

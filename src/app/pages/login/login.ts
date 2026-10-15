@@ -13,8 +13,6 @@ export class LoginComponent {
 
   login(): void {
 
-    console.log('Login successful');
-
     this.router.navigate(['/home']);
   }
 }

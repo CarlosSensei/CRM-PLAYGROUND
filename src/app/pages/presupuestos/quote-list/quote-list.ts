@@ -28,6 +28,9 @@ export class QuoteListComponent implements OnInit {
 
   filteredQuotes: Quote[] = [];
 
+  showDeleteModal = false;
+  quoteToDelete: Quote | null = null;
+
   constructor(
     private router: Router,
     private quoteService: QuoteService,
@@ -81,9 +84,31 @@ export class QuoteListComponent implements OnInit {
     this.selectedQuote = this.quoteService.getQuoteById(id);
   }
 
+  openDeleteModal(quote: Quote): void {
+    this.quoteToDelete = quote;
+    this.showDeleteModal = true;
+  }
+
   deleteQuote(id: number): void {
     this.quoteService.deleteQuote(id);
     this.loadQuotes();
+  }
+
+  confirmDelete(): void {
+
+    if (!this.quoteToDelete) {
+      return;
+    }
+
+    this.deleteQuote(this.quoteToDelete.id);
+
+    this.showDeleteModal = false;
+    this.quoteToDelete = null;
+  }
+
+  closeDeleteModal(): void {
+    this.showDeleteModal = false;
+    this.quoteToDelete = null;
   }
 
   closeEdit(): void {

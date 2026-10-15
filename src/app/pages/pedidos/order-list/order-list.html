@@ -46,11 +46,11 @@
 
         <td>
 
-          <button (click)="editOrder(order.id)">
+          <button class="btn-edit" (click)="editOrder(order.id)">
             Editar
           </button>
 
-          <button (click)="deleteOrder(order.id)">
+          <button class="btn-delete" (click)="openDeleteModal(order)">
             Eliminar
           </button>
 
@@ -61,6 +61,41 @@
     </tbody>
 
   </table>
+
+</div>
+
+<div
+  *ngIf="showDeleteModal"
+  class="modal-backdrop"
+  (click)="closeDeleteModal()">
+
+  <div
+    class="modal"
+    (click)="$event.stopPropagation()">
+
+    <h3>Confirmar eliminación</h3>
+
+    <p>
+      ¿Está seguro de que desea eliminar este pedido?
+    </p>
+
+    <div class="modal-actions">
+
+      <button
+        class="btn-cancel"
+        (click)="closeDeleteModal()">
+        Cancelar
+      </button>
+
+      <button
+        class="btn-confirm-delete"
+        (click)="confirmDelete()">
+        Eliminar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 

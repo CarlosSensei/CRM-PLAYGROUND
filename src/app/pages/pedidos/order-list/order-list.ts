@@ -28,6 +28,9 @@ export class OrderListComponent implements OnInit {
 
   filteredOrders: Order[] = []; 
 
+  showDeleteModal = false;
+  orderToDelete: Order | null = null;
+
   constructor(
     private router: Router,
     private orderService: OrderService,
@@ -85,9 +88,31 @@ export class OrderListComponent implements OnInit {
     this.selectedOrder = this.orderService.getOrderById(orderId);
   }
 
+  openDeleteModal(order: Order): void {
+    this.orderToDelete = order;
+    this.showDeleteModal = true;
+  }
+
   deleteOrder(orderId: number): void {
     this.orderService.deleteOrder(orderId);
     this.loadOrders();
+  }
+
+  confirmDelete(): void {
+
+    if (!this.orderToDelete) {
+      return;
+    }
+
+    this.deleteOrder(this.orderToDelete.id);
+
+    this.showDeleteModal = false;
+    this.orderToDelete = null;
+  }
+
+  closeDeleteModal(): void {
+    this.showDeleteModal = false;
+    this.orderToDelete = null;
   }
 
   closeEdit(): void {
