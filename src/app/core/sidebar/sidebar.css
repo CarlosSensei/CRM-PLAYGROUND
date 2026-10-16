@@ -100,7 +100,7 @@ li a:hover {
 .user-info p {
   margin: 0;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-contrast);
 }
 
 .welcome {
