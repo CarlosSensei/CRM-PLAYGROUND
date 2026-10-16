@@ -79,12 +79,12 @@ button {
 }
 
 .btn-edit {
-  background: var(--orders);
+  background: var(--quotes);
   color: var(--text-contrast);
 }
 
 .btn-edit:hover {
-  background: var(--orders-hover);
+  background: var(--quotes-hover);
 }
 
 .status {
